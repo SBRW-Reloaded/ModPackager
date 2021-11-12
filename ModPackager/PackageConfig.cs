@@ -82,6 +82,18 @@ namespace ModPackager
         /// </summary>
         [JsonProperty(Required = Required.Always, PropertyName = "distribution_name")]
         public string DistributionName { get; set; }
+        
+        /// <summary>
+        /// Is this package optional?
+        /// </summary>
+        [JsonProperty(PropertyName = "required")]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Package description
+        /// </summary>
+        [JsonProperty(PropertyName = "description")]
+        public string Description { get; set; }
     }
 
     /// <summary>
@@ -116,10 +128,28 @@ namespace ModPackager
         public string Name { get; set; }
 
         /// <summary>
+        /// The size of the package
+        /// </summary>
+        [JsonProperty]
+        public long Size { get; set; }
+
+        /// <summary>
         /// The SHA-1 checksum of the package.
         /// </summary>
         [JsonProperty]
         public string Checksum { get; set; }
+
+        /// <summary>
+        /// Is this package optional?
+        /// </summary>
+        [JsonProperty]
+        public bool Required { get; set; }
+
+        /// <summary>
+        /// Package description
+        /// </summary>
+        [JsonProperty]
+        public bool Description { get; set; }
     }
 
     /// <summary>

@@ -60,7 +60,10 @@ namespace ModPackager
                     buildIndex.Entries.Add(new BuildIndexEntry
                     {
                         Checksum = checksum,
-                        Name = buildConfigPackage.DistributionName + ".mods"
+                        Size = new FileInfo(outPath).Length,
+                        Name = buildConfigPackage.DistributionName + ".mods",
+                        Required = buildConfigPackage.required,
+                        Description = buildConfigPackage.Description || null
                     });
                 }
 
